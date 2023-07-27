@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Task } from './Task'
 
-export const Category = () => {
+export const Category = ({category}) => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
