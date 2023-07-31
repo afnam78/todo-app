@@ -6,7 +6,7 @@ import { BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
 function App() {
   return (
     <div className="App h-screen flex justify-center bg-gray-100">
-      <header className='absolute top-0 w-full bg-blue-100 flex justify-center py-3 gap-20'>
+      <header className='absolute top-0 w-full bg-blue-100 flex justify-center py-3 gap-20 border-b-2 border-gray-500'>
         <div>
           <h1 className='font-bold text-4xl'>
             #TodoApp
@@ -14,7 +14,7 @@ function App() {
         </div>
       </header>
       <Main />
-      <footer className='absolute bottom-0 w-full bg-blue-100 flex justify-center py-2 gap-20'>
+      <footer className='absolute bottom-0 w-full bg-blue-100 flex justify-center py-2 gap-20 border-t-2 border-gray-500'>
         <div>
           <a href='https://github.com/afnam78/todo-app' className=' hover:text-gray-800' target='_blank' rel='noreferrer' title='GitHub'>
             <BsGithub size={25} />
