@@ -1,5 +1,4 @@
 import React, { createRef, useEffect, useState } from 'react'
-import { Category } from './Category'
 import { Task } from './Task'
 
 export const Main = () => {
@@ -81,6 +80,17 @@ export const Main = () => {
     return []
   }
 
+  const clearCompletedTasks = () => {
+    let updatedTasks = getUpdatedTasks()
+    let filteredTasks = updatedTasks.filter((task) => {
+      return task.category!== 'Completed'
+    }
+    )
+    setAllTasks(filteredTasks)
+    localStorage.setItem('tasks', JSON.stringify(filteredTasks))
+    getTasksByCategory(category)
+  }
+
 
   return (
     <div className='flex justify-center items-center '>
@@ -107,6 +117,11 @@ export const Main = () => {
             })
           }
         </div>
+        {
+          category === 'Completed' && <div className='flex justify-end mt-2'>
+            <button className='bg-red-500 text-sm px-2 py-1 rounded-lg hover:bg-red-600 text-white font-semibold' onClick={() => clearCompletedTasks()}>Clear Completed</button>
+          </div>
+        }
       </div>
     </div>
   )
